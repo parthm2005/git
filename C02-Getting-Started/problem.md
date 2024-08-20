@@ -35,19 +35,19 @@ Now we can check manually by putting different values of k.
 Bubblesort is a popular sorting algorithm. It works by repeatedly swapping adjacent elements that are out of order.
 
 ### `Answer`
-a. 我们还需要证明数组里面的元素就是原来的那些元素
+a. We also need to prove that the elements in the array are the original elements
 
-b. **每次循环前，子数组A[j..]的最小元素是A[j]** <br />
-Initialization:刚开始的时候，子数组只有一个元素，是A的最后一个元素，循环不变式自然成立 <br />
-Maintenance:每个迭代，会比较A[j]和A[j-1]的大小，并把小的往前放 <br />
-Termination:迭代结束时，j = i,A[i]是子数组A[i..]最小的元素 <br />
+b. **Before the cycle, the minimum element of the sub -group A [j ..] isA[j]** <br />
+Initialization:At the beginning, there was only one element of the sub -array, which was the last element of A. <br />
+Maintenance:Each iteration will compare the size of A [j] and a [j-1], and put the small one forward <br />
+Termination:At the end of iteration, j = i, a [i] is the minimum element of sub -array A [i ..]<br />
 
-c. **每次循环前，A[1,i-1]是一个排序好的数组，且小于等于A[i..]中的元素**
-Initialization:刚开始的时候，子数组为空，循环不变式自然成立 <br />
-Maintenance:每个迭代，A[i]会变成A[i..]中的最小元素 <br />
-Termination:迭代结束时，i = n, 我们获得了一个排序好的数组 <br />
+c. **Before the cycle, A [1, I-1] is a sorted array, and less than equal to the element in A [i ..]**
+Initialization:At the beginning, the sub -array was empty, and the cycle was unable to be established naturally <br />
+Maintenance:Each iteration, A [i] will become a minimum element in A [i ..] <br />
+Termination:At the end of iteration, i = n, we got a sorted array<br />
 
-d. **bubblesort**的最坏运行时间与**insertion sort**一样都是Θ(n^2)，但是一般来说**bubblesort**会慢点，因为它有许多的**swap**操作.
+d. **bubblesort**The worst operation time and time**insertion sort**一All are θ (n^2), but in general**bubblesort**Will slowly, because it has a lot**swap**operate.
 
 
 ### Problems 3 : Correctness of Horner's rule
@@ -65,21 +65,21 @@ Naive-Poly-Eval:
     	for k = 1 to i
         	m = m·x
     	y = y + aᵢ·m
-运行时间是Θ(n2),非常慢
+Running time is Θ(n2),Very slow
 
 **c.** 
 
-**Initialization:** 一开始没有项，y = 0 
+**Initialization:** 一There is no item at the beginning，y = 0 
 
-**Maintenance:**根据循环不变式，第i次迭代结束有
+**Maintenance:**According to the cycle unchanged, the I iteration is ended at the end
 
 ![](http://latex.codecogs.com/gif.latex?y=a_i+x\\sum_{k=0}^{n-\(i+1\)}a_{k+i+1}x^k=a_ix^0+\\sum_{k=0}^{n-i-1}a_{k+i+1}x^{k+1}=\\sum_{k=-1}^{n-i-1}a_{k+i+1}x^{k+1}=\\sum_{k=0}^{n-i}a_{k+i}x^k)
 
-**Termination:**循环结束时 i = -1, 将i = 0代入
+**Termination:**At the end of the cycle i = -1, Will i = 0 Substitution
 ![](http://latex.codecogs.com/gif.latex?y=sum_{k=0}^{n}a_{k}x^k)
 
 **d.**
-前面已经证明了循环不变式，结论自然是成立的.
+Earlier has proved that the cycle is unchanged, and the conclusion is naturally established.
 
 
 ### Problems 4 : Inversions
