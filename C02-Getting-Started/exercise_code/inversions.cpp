@@ -1,6 +1,6 @@
 //  Created by wander on 16/5/14.
-//  Copyright © 2016年 W4anD0eR96. All rights reserved.
-//  采用左闭右开的区间描述方式
+//  Copyright © 2016Year W4anD0eR96. All rights reserved.
+//  Use the interval description method of left closed and right open
 
 #include "bits/stdc++.h"
 using namespace std;
@@ -17,8 +17,8 @@ void MergeWithCountInversions(vector<int>& v, int p, int q, int r, int& cnt) {
     //   i      n1    j    n2
     //   |      |     |    |
     // |--------)|---------）
-    // 若此时发生L[i] > R[j]，则由于L[0..i) < R[j]且R[0..j) < R[j]
-    // 故与R[j]构成逆序对的元素是L[i..n1)
+    // If this happens L[i] > R[j]，then due to L[0..i) < R[j] and R[0..j) < R[j]
+    // Therefore, the elements that form a reverse-order pair with R[j] are L[i..n1)
     if (L[i] <= R[j]) { v[k] = L[i]; i += 1; }
     else { v[k] = R[j]; j += 1; cnt += n1 - i;
       { for (int u = i; u < n1; ++u) cout << "(" << L[u] << "," << R[j - 1] << "), "; } // Print Inversions
